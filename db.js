@@ -5,7 +5,7 @@ export const videos = [
     description: "the video is about..",
     views: 24,
     videoFile:
-      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     creator: {
       id: 121212,
       name: "차성현",
@@ -18,7 +18,7 @@ export const videos = [
     description: "the video is about..",
     views: 24,
     videoFile:
-      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     creator: {
       id: 121212,
       name: "차성현",
@@ -31,7 +31,7 @@ export const videos = [
     description: "the video is about..",
     views: 24,
     videoFile:
-      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     creator: {
       id: 121212,
       name: "차성현",
