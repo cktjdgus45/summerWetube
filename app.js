@@ -24,4 +24,4 @@ app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
 
-export default app;
+export default app; //app의 선언과 그 app관련 설정들을 수출한다는 의미 app.xxx
