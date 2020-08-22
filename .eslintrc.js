@@ -14,5 +14,6 @@ module.exports = {
   },
   rules: {
     "no-console": "off",
+    "Parsing-error": "off",
   },
 };
