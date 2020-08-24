@@ -9,6 +9,7 @@ import globalRouter from "./routers/globalRouter";
 import routes from "./routers/routes";
 import { localsMiddleware } from "./middleware";
 import passport from "passport";
+import session from "express-session";
 
 import "./passport";
 
@@ -22,6 +23,14 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
+app.use(
+  session({
+    secret: process.env.COOKIE_SECRET,
+    resave: true,
+    saveUninitialized: false,
+  })
+);
+
 app.use(passport.initialize());
 app.use(passport.session());
 

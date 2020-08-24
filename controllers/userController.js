@@ -30,12 +30,11 @@ export const postJoin = async (req, res, next) => {
 export const getLogin = (req, res) => {
   res.render("login", { pageTitle: "LOGIN" });
 };
-export const postLogin = (req, res) => {
-  passport.authenticate("local", {
-    successRedirect: routes.home,
-    failureRedirect: routes.login,
-  });
-};
+
+export const postLogin = passport.authenticate("local", {
+  failureRedirect: routes.login,
+  successRedirect: routes.home,
+});
 export const logout = (req, res) => {
   //to do : 로그아웃 처리 하기
   res.redirect(routes.home);
