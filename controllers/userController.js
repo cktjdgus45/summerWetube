@@ -51,6 +51,10 @@ export const changePassword = (req, res) =>
 
 export const githubLogin = passport.authenticate("github");
 
+export const postGithubLogIn = (req, res) => {
+  res.redirect(routes.home);
+};
+
 export const githubLoginCallback = (accessToken, refreshToken, profile, cb) => {
   console.log(accessToken, refreshToken, profile, cb);
 };
