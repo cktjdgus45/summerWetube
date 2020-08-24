@@ -8,12 +8,16 @@ import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
 import routes from "./routers/routes";
 import { localsMiddleware } from "./middleware";
+import MongoStore from "connect-mongo";
 import passport from "passport";
 import session from "express-session";
+import mongoose from "mongoose";
 
 import "./passport";
 
 const app = express();
+
+const CookieStore = MongoStore(session);
 
 app.set("view engine", "pug");
 app.use("/uploads", express.static("uploads"));
@@ -28,6 +32,7 @@ app.use(
     secret: process.env.COOKIE_SECRET,
     resave: true,
     saveUninitialized: false,
+    store: new CookieStore({ mongooseConnection: mongoose.connection }),
   })
 );
 

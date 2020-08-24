@@ -45,7 +45,6 @@ export const postUpload = async (req, res) => {
     description,
   });
   res.redirect(routes.videoDetail(newVideo.id));
-  //to do :비디오 업로드 및 저장
 };
 
 export const videoDetail = async (req, res) => {
