@@ -42,16 +42,17 @@ export const logout = (req, res) => {
 
 export const me = (req, res) => {
   res.render("userDetail", { pageTitle: "User Detail", user: req.user });
-  console.log(req.user);
 };
 
 export const users = (req, res) => res.render("users", { pageTitle: "USERS" });
+
 export const userDetail = async (req, res) => {
   const {
     params: { id },
   } = req;
   try {
-    const user = await User.findById(id);
+    const user = await User.findById(id).populate("videos");
+    console.log(user);
     res.render("userDetail", { pageTitle: "User Detail", user });
   } catch (error) {
     res.redirect(routes.home);
@@ -64,6 +65,7 @@ export const githubLogin = passport.authenticate("github");
 
 export const postGithubLogIn = (req, res) => {
   res.redirect(routes.home);
+  console.log(req.user);
 };
 
 export const githubLoginCallback = async (_, __, profile, cb) => {
