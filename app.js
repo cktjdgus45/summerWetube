@@ -12,6 +12,7 @@ import MongoStore from "connect-mongo";
 import passport from "passport";
 import session from "express-session";
 import mongoose from "mongoose";
+import apiRouter from "./routers/apiRouter";
 
 import "./passport";
 
@@ -44,5 +45,6 @@ app.use(localsMiddleware);
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
+app.use(routes.api, apiRouter);
 
 export default app; //app의 선언과 그 app관련 설정들을 수출한다는 의미 app.xxx
