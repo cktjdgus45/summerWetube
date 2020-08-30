@@ -1,3 +1,4 @@
+import "@babel/polyfill";
 import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
@@ -10,6 +11,7 @@ import routes from "./routers/routes";
 import { localsMiddleware } from "./middleware";
 import MongoStore from "connect-mongo";
 import passport from "passport";
+import path from "path";
 import session from "express-session";
 import mongoose from "mongoose";
 import apiRouter from "./routers/apiRouter";
@@ -21,8 +23,8 @@ const app = express();
 const CookieStore = MongoStore(session);
 
 app.set("view engine", "pug");
-app.use("/uploads", express.static("uploads"));
-app.use("/static", express.static("static"));
+app.set("views", path.join(__dirname, "views"));
+app.use("/static", express.static(path.join(__dirname, "static")));
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(cookieParser());
 app.use(bodyParser.json());

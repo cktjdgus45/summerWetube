@@ -17,6 +17,9 @@ const config = {
         use: [
           {
             loader: "babel-loader",
+            query: {
+              compact: false,
+            },
           },
         ],
       },
